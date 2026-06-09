@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SÈNTRI APPAREL — Guarded by Design</title>
   <meta name="description" content="SÈNTRI APPAREL — premium streetwear. Limited drops. No restocks. Guarded by Design." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23091208'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
 
   <!-- Same type DNA as the live site: Besley (slab serif) + Archivo (grotesque) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,18 +48,18 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero: split layout — text panel + portrait photo (desktop-safe) -->
   <section class="hero">
-    <div class="hero__img">
-      <img src="https://sentriapparel.co/cdn/shop/files/IMG_3491.jpg" alt="Model wearing the black SÈNTRI Founders hoodie" />
-    </div>
-    <div class="u-wrap">
+    <div class="hero__panel">
       <div class="hero__inner">
         <p class="eyebrow reveal">SÈNTRI — Founders Drop</p>
         <h1 class="hero__title reveal" data-d="1">Built for longevity.</h1>
         <p class="hero__sub reveal" data-d="2">Heavyweight construction. Considered detail. Made to outlast the trend cycle.</p>
         <a href="#drop" class="btn btn--paper reveal" data-d="3">Shop the Founders Release <span class="arr">→</span></a>
       </div>
+    </div>
+    <div class="hero__media">
+      <img src="assets/hero-city.png" alt="Model wearing the black SÈNTRI 'Guarded by Design' hoodie against glass towers" />
     </div>
   </section>
 
@@ -68,6 +69,21 @@
       <img src="https://sentriapparel.co/cdn/shop/files/C7D6954A-0D6E-413E-BE45-5824E64D3875.jpg" alt="SÈNTRI hoodie laid flat on speckled surface" />
     </div>
     <p class="statement__text reveal">No excess. No shortcuts.</p>
+  </section>
+
+  <!-- Editorial split — gives the portrait photo a portrait-friendly column -->
+  <section class="editorial">
+    <div class="editorial__media reveal">
+      <img src="https://sentriapparel.co/cdn/shop/files/IMG_3491.jpg" alt="Back view of the SÈNTRI Founders hoodie — Guarded by Design print" loading="lazy" />
+    </div>
+    <div class="editorial__text">
+      <div class="editorial__inner reveal" data-d="1">
+        <p class="section-eyebrow">Guarded by Design</p>
+        <h2 class="section-title">Considered, not loud.</h2>
+        <p class="body">Every SÈNTRI piece is built around restraint — heavyweight fabric, clean lines, and detail you feel before you notice. Made in limited runs, never restocked.</p>
+        <a href="#drop" class="link">Explore the drop <span class="arr">→</span></a>
+      </div>
+    </div>
   </section>
 
   <!-- Product grid (new — uses the real product photos) -->

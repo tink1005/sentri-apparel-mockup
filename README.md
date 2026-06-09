@@ -16,6 +16,9 @@ paper, slab serif + grotesque, the real product photography) while tightening th
 | "Learn more" | Orphaned low-contrast gray text | Animated underline link with arrow |
 | Products | None on homepage | Real product grid (4 hoodies) with hover-zoom |
 | Motion | None | Restrained scroll-reveal + marquee announcement |
+| Desktop | Portrait photos stretched full-bleed on wide screens | **Split layouts** — portrait photos sit in half-width columns, never stretched |
+| Hero | Phone photo cropped behind text | Split hero: text panel + the new city campaign photo (`assets/hero-city.png`) |
+| Imagery | — | Added the city "Guarded by Design" shot; original back-print photo moved to an editorial split section |
 
 Niche, copy, palette, and photography are unchanged — this is a polish pass, not a redesign.
 

@@ -123,25 +123,42 @@ button { font: inherit; color: inherit; cursor: pointer; background: none; borde
   text-align: center; white-space: nowrap;
 }
 
-/* ---------- Hero ---------- */
-.hero { position: relative; min-height: clamp(560px, 88vh, 940px); display: flex; align-items: flex-end; color: var(--paper); }
-.hero__img { position: absolute; inset: 0; }
-.hero__img img { width: 100%; height: 100%; object-fit: cover; }
-.hero__img::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.18) 42%, rgba(0,0,0,.30) 100%);
-}
-.hero__inner { position: relative; z-index: 2; padding-bottom: clamp(40px, 7vw, 92px); max-width: 640px; }
-.eyebrow { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; opacity: .85; margin-bottom: 16px; }
-.hero__title { font-family: var(--serif); font-weight: 500; line-height: 1.02; font-size: clamp(2.6rem, 6vw, 4.6rem); letter-spacing: -.01em; margin-bottom: 14px; }
-.hero__sub { font-size: 1.02rem; opacity: .9; margin-bottom: 30px; max-width: 38ch; }
+/* ---------- Hero (split layout — text panel + portrait photo) ---------- */
+.hero { display: grid; grid-template-columns: 1fr; background: var(--ink); color: var(--paper); }
+.hero__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; }
+.hero__panel { display: flex; align-items: center; padding: clamp(48px, 9vw, 92px) var(--gut); }
+.hero__inner { max-width: 540px; }
+.eyebrow { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; opacity: .8; margin-bottom: 18px; }
+.hero__title { font-family: var(--serif); font-weight: 500; line-height: 1.02; font-size: clamp(2.7rem, 5.4vw, 4.4rem); letter-spacing: -.01em; margin-bottom: 18px; }
+.hero__sub { font-size: 1.02rem; opacity: .82; margin-bottom: 34px; max-width: 40ch; }
 
-/* ---------- Statement band over image ---------- */
-.statement { position: relative; min-height: clamp(380px, 60vh, 620px); display: grid; place-items: center; text-align: center; color: var(--paper); }
+@media (min-width: 1024px) {
+  .hero { grid-template-columns: 1.02fr 1fr; min-height: clamp(620px, 84vh, 880px); }
+  .hero__media { aspect-ratio: auto; order: 2; }
+  .hero__media img { position: absolute; inset: 0; }
+  .hero__panel { order: 1; }
+}
+
+/* ---------- Statement band over image (height-capped so it never stretches) ---------- */
+.statement { position: relative; height: clamp(360px, 52vh, 560px); display: grid; place-items: center; text-align: center; color: var(--paper); overflow: hidden; }
 .statement__img { position: absolute; inset: 0; }
-.statement__img img { width: 100%; height: 100%; object-fit: cover; }
-.statement__img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.42); }
-.statement__text { position: relative; z-index: 2; font-family: var(--sans); font-weight: 600; letter-spacing: .01em; font-size: clamp(1.9rem, 5vw, 3.4rem); }
+.statement__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.statement__img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.46); }
+.statement__text { position: relative; z-index: 2; font-family: var(--sans); font-weight: 600; letter-spacing: .01em; font-size: clamp(1.9rem, 4.6vw, 3.2rem); padding-inline: 6vw; }
+
+/* ---------- Editorial split (portrait photo in a portrait-friendly column) ---------- */
+.editorial { display: grid; grid-template-columns: 1fr; align-items: stretch; }
+.editorial__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-2); }
+.editorial__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.editorial__text { background: var(--paper-2); display: flex; align-items: center; padding: clamp(48px, 8vw, 96px) var(--gut); }
+.editorial__inner { max-width: 480px; }
+.editorial__inner p.body { color: var(--ink-soft); margin: 18px 0 26px; font-size: 1.02rem; }
+@media (min-width: 1024px) {
+  .editorial { grid-template-columns: 1fr 1fr; min-height: clamp(560px, 76vh, 800px); }
+  .editorial__media { aspect-ratio: auto; }
+  .editorial__media img { position: absolute; inset: 0; }
+}
 
 /* ---------- Product grid (new) ---------- */
 .drop { padding: clamp(72px, 10vw, 132px) 0; }
